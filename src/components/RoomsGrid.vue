@@ -13,7 +13,9 @@
 import RoomService from '../services/roomService.js'
 
 export default {
-  name: "rooms-grid"
+  name: "rooms-grid",
+  props: ["rooms"]
+
 }
 </script>
 

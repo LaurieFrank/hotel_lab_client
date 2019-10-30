@@ -11,7 +11,7 @@ export default {
   name: 'app',
   components: {
     'rooms-grid': RoomsGrid
-  }
+  },
   data (){
     return {
       rooms: []
@@ -19,6 +19,12 @@ export default {
   },
   mounted() {
     this.fetchData();
+  },
+  methods: {
+    fetchData(){
+      RoomService.getRooms()
+      .then(rooms => this.rooms = rooms);
+    }
   }
 }
 </script>
