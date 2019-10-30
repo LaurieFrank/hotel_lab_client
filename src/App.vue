@@ -1,17 +1,24 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<!-- <room-form></room-form> -->
+<rooms-grid :rooms="rooms"></rooms-grid>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RoomsGrid from './components/RoomsGrid';
+import RoomService from './services/roomService';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    'rooms-grid': RoomsGrid
+  }
+  data (){
+    return {
+      rooms: []
+    }
+  },
+  mounted() {
+    this.fetchData();
   }
 }
 </script>
