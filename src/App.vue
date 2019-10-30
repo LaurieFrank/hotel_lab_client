@@ -1,16 +1,20 @@
 <template>
-<!-- <room-form></room-form> -->
-<rooms-grid :rooms="rooms"></rooms-grid>
+  <div>
+    <room-form />
+    <rooms-grid :rooms="rooms"></rooms-grid>
+  </div>
 </template>
 
 <script>
 import RoomsGrid from './components/RoomsGrid';
 import RoomService from './services/roomService';
+import RoomsForm from './components/RoomsForm';
 
 export default {
   name: 'app',
   components: {
-    'rooms-grid': RoomsGrid
+    'rooms-grid': RoomsGrid,
+    'room-form': RoomsForm
   },
   data (){
     return {
