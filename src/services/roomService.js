@@ -19,6 +19,19 @@ export default {
     return fetch(baseURL + id, {
       method: 'DELETE'
     })
+  },
+
+  getOneRoom(id){
+    return fetch(baseURL + id)
+    .then(res => res.json())
+  },
+
+  updateRoom(payload){
+    return fetch(baseURL + payload._id {
+      method: 'PUT',
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
   }
 
 }
