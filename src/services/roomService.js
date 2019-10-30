@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/rooms'
+const baseURL = 'http://localhost:3000/api/rooms/'
 
 export default {
   getRooms(){

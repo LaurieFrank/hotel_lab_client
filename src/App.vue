@@ -9,6 +9,7 @@
 import RoomsGrid from './components/RoomsGrid';
 import RoomService from './services/roomService';
 import RoomsForm from './components/RoomsForm';
+import {eventBus} from './main.js';
 
 export default {
   name: 'app',
@@ -23,6 +24,13 @@ export default {
   },
   mounted() {
     this.fetchData();
+
+    eventBus.$on('room-added', room => this.rooms.push(room));
+
+    eventBus.$on('room-deleted', id => {
+      const index = this.rooms.findIndex(room => room._id === id);
+      this.rooms.splice(index, 1);
+    })
   },
   methods: {
     fetchData(){
