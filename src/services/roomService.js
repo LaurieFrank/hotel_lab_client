@@ -21,15 +21,12 @@ export default {
     })
   },
 
-  getOneRoom(id){
-    return fetch(baseURL + id)
-    .then(res => res.json())
-  },
-
   updateRoom(payload){
-    return fetch(baseURL + payload._id {
+    console.log("payload is:", payload);
+    return fetch(baseURL + payload["_id"], {
       method: 'PUT',
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
   }

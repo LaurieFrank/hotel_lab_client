@@ -5,6 +5,7 @@
     <p>E-mail: {{room.email}}</p>
     <p>Checked In: {{room.checkIn}}</p>
     <button v-on:click="handleDelete(room._id)">Delete Booking</button>
+    <button v-on:click="handleUpdate(room)">Change Check In Status</button>
   </div>
 
 </div>
@@ -22,6 +23,12 @@ export default {
     handleDelete(id){
       RoomService.deleteRoom(id)
       .then(response => eventBus.$emit('room-deleted', id));
+    },
+    handleUpdate(payload){
+      payload.checkIn = !payload.checkIn;
+      console.log("Payload checkin: ",payload);
+      RoomService.updateRoom(payload)
+      .then(response => eventBus.$emit('room-updated', payload))
     }
   }
 

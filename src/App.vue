@@ -30,6 +30,12 @@ export default {
     eventBus.$on('room-deleted', id => {
       const index = this.rooms.findIndex(room => room._id === id);
       this.rooms.splice(index, 1);
+    });
+
+    eventBus.$on('room-updated', newRoom => {
+      const index = this.rooms.findIndex(room => room._id === newRoom._id);
+      this.rooms.splice(index, 1, newRoom);
+
     })
   },
   methods: {
