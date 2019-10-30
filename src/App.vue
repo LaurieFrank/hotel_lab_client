@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <room-form />
-    <rooms-grid :rooms="rooms"></rooms-grid>
+  <div id="title">
+    <h1>M&L's Hotel</h1>
+    <div>
+      <room-form />
+      <br>
+      <rooms-grid :rooms="rooms"></rooms-grid>
+    </div>
   </div>
 </template>
 
@@ -55,5 +59,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
 }
 </style>

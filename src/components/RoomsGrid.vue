@@ -36,4 +36,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#roomsGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.room {
+  background-color: #A499B3;
+  padding: 10px;
+  font-family: arial;
+}
 </style>
